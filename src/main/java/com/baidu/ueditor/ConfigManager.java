@@ -7,7 +7,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,6 +19,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import com.baidu.ueditor.define.ActionMap;
+import com.baidu.ueditor.listener.UploadListener;
 
 /**
  * 配置管理器
@@ -34,6 +37,7 @@ public class ConfigManager {
 	private final static String SCRAWL_FILE_NAME = "scrawl";
 	// 远程图片抓取filename定义
 	private final static String REMOTE_FILE_NAME = "remote";
+	private List<UploadListener> uploadListeners = new ArrayList<>();
 	
 	/*
 	 * 通过一个给定的路径构建一个配置管理器， 该管理器要求地址路径所在目录下必须存在config.properties文件
@@ -233,5 +237,10 @@ public class ConfigManager {
 		return input.replaceAll( "/\\*[\\s\\S]*?\\*/", "" );
 		
 	}
+
+	public List<UploadListener> getUploadListeners() {
+		return uploadListeners;
+	}
+	
 	
 }

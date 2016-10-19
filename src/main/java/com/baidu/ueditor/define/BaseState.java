@@ -52,6 +52,8 @@ public class BaseState implements State {
 		return this.toString();
 	}
 	
+	
+	
 	public String toString () {
 		
 		String key = null;
@@ -85,6 +87,10 @@ public class BaseState implements State {
 	@Override
 	public void putInfo(String name, long val) {
 		this.putInfo(name, val+"");
+	}
+
+	public Map<String, String> getInfoMap() {
+		return infoMap;
 	}
 
 }
