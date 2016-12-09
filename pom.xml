@@ -18,6 +18,19 @@
 		</developer>
 	</developers>
 
+	<distributionManagement>
+		<repository>
+			<id>project-release</id>
+			<name>project deploy to nexus release</name>
+			<url>http://120.26.54.153:8082/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>project-snapshot</id>
+			<name>project deploy to nexus snapshot</name>
+			<url>http://120.26.54.153:8082/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<httpclient.version>4.5.2</httpclient.version>
